@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campaigns - Phishing SMS Reporting System</title>
+
+    <style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #10233f;
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+nav {
+    min-height: 70px;
+    background: #061426;
+    padding: 15px 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+nav > div:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 0;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #4da3ff;
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+    width: 92%;
+    max-width: 1250px;
+    margin: 45px auto;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #60748c;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* ================= CARD ================= */
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+    overflow-x: auto;
+}
+
+/* ================= TABLE ================= */
+
+table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+th {
+    background: #f1f4f8;
+    color: #536276;
+    text-align: left;
+    padding: 16px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+td {
+    padding: 16px;
+    border-bottom: 1px solid #e5e9ef;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+tr:hover {
+    background: #fafcff;
+}
+
+/* ================= STATUS ================= */
+
+.status {
+    color: #159447;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        flex-direction: column;
+        padding: 20px;
+        gap: 18px;
+    }
+
+    .logo {
+        text-align: center;
+        font-size: 21px;
+    }
+
+    nav > div:last-child {
+        width: 100%;
+        justify-content: center;
+        gap: 10px 18px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 94%;
+        margin: 35px auto;
+    }
+
+    h1 {
+        font-size: 31px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    table {
+        min-width: 820px;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    nav {
+        padding: 18px 14px;
+    }
+
+    .logo {
+        font-size: 18px;
+        line-height: 1.4;
+        white-space: normal;
+        text-align: center;
+    }
+
+    nav > div:last-child {
+        gap: 9px 13px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .container {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 22px;
+    }
+
+    .card {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    table {
+        min-width: 760px;
+    }
+
+    th {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    td {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 400px) {
+
+    nav {
+        padding: 16px 10px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    nav > div:last-child {
+        gap: 8px 10px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .container {
+        width: 94%;
+        margin: 22px auto;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    table {
+        min-width: 720px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        Phishing SMS Reporting System
+    </div>
+
+    <div>
+        <a href="/">Home</a>
+        <a href="/report">Report SMS</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/reports">Reports</a>
+        <a href="/campaigns">Campaigns</a>
+        <a href="/about">About</a>
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <h1>Campaigns</h1>
+
+    <p class="subtitle">
+        Detected phishing campaigns grouped by similar SMS messages
+    </p>
+
+
+    <div class="card">
+
+        <table>
+
+            <tr>
+                <th>Campaign ID</th>
+                <th>Fingerprint</th>
+                <th>Similarity Threshold</th>
+                <th>Total Reports</th>
+                <th>First Seen</th>
+                <th>Status</th>
+            </tr>
+
+
+            {% for campaign in campaigns %}
+
+            <tr>
+
+                <td>{{ campaign[0] }}</td>
+
+                <td>
+                    {{ campaign[1][:70] }}
+                    {% if campaign[1]|length > 70 %}
+                    ...
+                    {% endif %}
+                </td>
+
+                <td>0.70</td>
+
+                <td>{{ campaign[3] }}</td>
+
+                <td>{{ campaign[2] }}</td>
+
+                <td class="status">
+                    ● Active
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>
